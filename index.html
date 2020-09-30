@@ -1,58 +1,81 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+<title>Protein Folding with Shortcut Networks</title>
 <style>
-a:link {
+a:link {	
   text-decoration: none;
+}
+a:hover {
+  background-color: yellow;    
+}
+<!--Accessibility: Exhibit similar behavior when tabs are used to access links.-->
+a:focus { 
+  background-color: yellow;    
+}
+
+.responsive-img {
+	max-width: 100%;
+	height: auto;
 }
 </style>
 </head>
 
 <body>
+<main>
+<header><h1>Protein Folding with Shortcut Networks</h1></header>
+<figure>
+<img class="responsive-img" src="Figures/2ci2.jpg" alt="2ci2 cartoon" style="width:250px; height:200px;" >
+<img class="responsive-img" src="Figures/2ci2_cm.jpg" alt="2ci2 PRN0 with SCN0 contact map" style="width:198px; height:180px;" >
+<figcaption>Cartoon of 2CI2, and the contact map of its native-state protein residue network with shortcuts denoted in red.</figcaption>
 
-<h1>Protein Folding with Shortcut Networks</h1>
+</figure>
 
-<p>Cartoon of 2CI2, and the contact map of its native-state protein residue network with shortcuts denoted in red.</p>
-<img src="Figures/2ci2.jpg" alt="2ci2 cartoon" style="width:250px; height:200px;">
-<img src="Figures/2ci2_cm.jpg" alt="2ci2 PRN0 with SCN0 contact map" style="width:198px; height:180px;">
-
-<h4>References</h4>
+<section><strong>References</strong>
 <ol>
-<li>Khor S (2016). Protein residue networks from a local search perspective. Journal of Complex Networks 4(2):245-278. </li>
-<li>Khor S (2017). Comparing local search paths with global search paths on protein residue networks: allosteric communication. Journal of Complex Networks 5:409-432.</li>
-<li>Khor S (2018). Folding with a protein's native shortcut network. Proteins: Structure, Function and Bioinformatics 86(9):924-934.</li>
-<li>Khor S (2020). The ND folding model. Submitted.</li>
+<li>Khor S (2016). Protein residue networks from a local search perspective. <em>Journal of Complex Networks</em> 4(2):245-278. </li>
+<li>Khor S (2017). Comparing local search paths with global search paths on protein residue networks: allosteric communication. <em>Journal of Complex Networks</em> 5:409-432.</li>
+<li>Khor S (2018). Folding with a protein's native shortcut network. <em>Proteins: Structure, Function and Bioinformatics</em> 86(9):924-934.</li>
+<li>Khor S (2020). The ND folding model. <em>Submitted</em>.</li>
 </ol>
-<hr style="color:lightgrey;">
+</section><hr style="color:lightgrey;">
 
-<p><a href="Fold_rate_corrs.html" target="_blank">Linear correlation with experimental folding rate.</a></p>
+<section>
+<p><a href="EDS_variants_native_structures.html" target="_blank">EDS variants.</a></p>
+</section><hr style="color:lightgrey;">
+
+<section>
+<p>Linear correlation with experimental folding rate: <a href="Fold_rate_corrs.html" target="_blank"> version 1</a> 
+&nbsp;<a href="Fold_rate_corrs_v2.html" target="_blank"> version 2</a></p>
 <ol>
 <li>Simulated folding rate (peak ND energies).</li>
 <li>Contact-Order of native shortcut networks (SCN0).</li>
 <li>Network clustering (<i>C</i>) of SCN0.</li>
 </ol>
-
 <p><a href="Adjusting_ND_energies.html" target="_blank">Adjusting ND energies.</a></p>
-<hr style="color:lightgrey;">
+</section><hr style="color:lightgrey;">
 
+<section>
 <p><a href="Model_ND_energy_Gaussians.html" target="_blank">Model ND energy distributions.</a></p>
-
+<div>
 <p>Locating TSE networks within the ND reaction coordinate denoted by <i>Q</i> which is fraction of native shortcuts.</p>
 <ol>
 <li><a href="TSE_location_NDenergy.html" target="_blank">with ND energy (<i>E</i>) Gaussians.</a></li>
-<li><a href="TSE_location_NDnets.html" target="_blank">with SCN0 Contact-Order and with SCN0 network clustering.</a></li>
-</ol>
+<li><a href="TSE_location_NDnets.html" target="_blank">with SCN0 Contact-Order and with SCN0 network clustering.</a></li></ol>
 The above three features highlight different aspects of a contact: (i) <i>E</i> is particular about amino acid pairing of native and non-native shortcuts, (ii) Contact-Order is sensitive to sequence distance of native shortcuts, and (iii) <i>C</i> considers the arrangement of native shortcuts relative to each other.
+</div>
+</section><hr style="color:lightgrey;">
 
-<hr style="color:lightgrey;">
+<section>
 <p><a href="ExploreContactProbMap_frozen.html" target="_blank">Dashboard to explore contact probability maps.</a></p>
+</section><hr style="color:lightgrey;">
 
-<hr style="color:lightgrey;">
+<section>
 <p><a href="SSE_from_DSSP.html" target="_blank">Obtain SSEs for a protein sequence from DSSP.</a></p> 
+</section><hr style="color:lightgrey;">
 
-<p>&nbsp;</p>
-Copyright 2019-2020 Susan Khor
+</main>
+<footer>Copyright 2019-2020 Susan Khor</footer>
 </body>
 </html>
 
