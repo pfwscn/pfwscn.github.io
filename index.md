@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+<title>Protein Folding with Shortcut Networks</title>
+<style>
+a:link {	
+  text-decoration: none;
+}
+a:hover {
+  background-color: yellow;    
+}
+<!--Accessibility: Exhibit similar behavior when tabs are used to access links.-->
+a:focus { 
+  background-color: yellow;    
+}
+
+.responsive-img {
+	max-width: 100%;
+	height: auto;
+}
+</style>
+</head>
+
+<body>
+<main>
+<header><h1>Protein Folding with Shortcut Networks</h1></header>
+<figure>
+<img class="responsive-img" src="Figures/2ci2.jpg" alt="2ci2 cartoon" style="width:250px; height:200px;" >
+<img class="responsive-img" src="Figures/2ci2_cm.jpg" alt="2ci2 PRN0 with SCN0 contact map" style="width:198px; height:180px;" >
+<figcaption>Cartoon of 2CI2, and the contact map of its native-state protein residue network with shortcuts denoted in red.</figcaption>
+
+</figure>
+
+
+<section>
+<strong>References</strong>
+<ol>
+<li>Khor S (2016). Protein residue networks from a local search perspective. <em>Journal of Complex Networks</em> 4(2):245-278. </li>
+<li>Khor S (2017). Comparing local search paths with global search paths on protein residue networks: allosteric communication. <em>Journal of Complex Networks</em> 5:409-432.</li>
+<li>Khor S (2018). Folding with a protein's native shortcut network. <em>Proteins: Structure, Function and Bioinformatics</em> 86(9):924-934.</li>
+<li>Khor S (2020). The ND folding model. <em>arXiv:1902.06333 version3+ Submitted</em>.</li>
+</ol>
+</section>
+
+If you find any of the material presented here helpful, please cite the revelant journal paper(s), or 
+consider being a <a href=https://ko-fi.com/pfwscn target="_blank">sponsor</a> to advance this research project. Thanks for visiting! &#127803;
+
+<hr style="color:lightgrey;">
+
+<section>
+<h2>Mesoscopic investigations</h2>
+<img class="responsive-img" src="Figures/2ci2_SCN0_pathway.png" alt="2ci2 SCN0 folding pathway" style="width:350px; height:300px;" >
+<figcaption>Folding pathway (green arcs) for 2CI2 from native shortcut network.</figcaption>
+
+<p><a href="EDS_variants_native_structures.html" target="_blank">EDS variants: abslv</a> 
+and their folding pathways from native shortcut networks.</p>
+
+<p><a href="ND_folding_pathways.html" target="_blank">Folding pathways from ND generated protein residue networks: </a>$P_{fold}$</p>
+
+<p><a href="ExploreContactProbMap_frozen.html" target="_blank">Dashboard to explore contact probability maps as a function of <em>Q</em></a></p>
+
+<p><a href="SSE_from_DSSP.html" target="_blank">Obtain SSEs for a protein sequence from DSSP</a></p> 
+
+</section><hr style="color:lightgrey;">
+
+<section>
+<h2>Macroscopic investigations</h2>
+<img class="responsive-img" src="Figures/2ci2_energyprofile.jpg" alt="2ci2 ND energy profile" style="width:420px; height:200px;" >
+<img class="responsive-img" src="Figures/UZ_ndv_fratecorr_a.png" alt="UZ fold corr" style="width:300px; height:220px";>
+
+<p><a href="Fold_rate_corrs_v2.html" target="_blank"> Linear correlation with experimental folding rate: edv=a, ndv=craxy</a></p>
+<ol>
+<li>Simulated folding rate (peak ND energies).</li>
+<li>Contact-Order of native shortcut networks (SCN0).</li>
+<li>Network clustering (<i>C</i>) of SCN0.</li>
+</ol>
+<p><a href="Fold_rate_corrs_v4.html" target="_blank">Explore edge probability and energy interactions on fold rate correlation</a></p>
+<ul>
+<li>Scaling edge probability has an impact; it's not just a nice to have.</li>
+<li>There's some wiggle room with energy interactions; MJ potentials not strictly necessary, but good that it also works.</li>
+</ul>
+
+<p><a href="Model_NDenergy_Gaussians_Paci.html" target="_blank">Model ND energy distributions: edv=a, ndv=craxy</a></p>
+
+<p>Locating TSE networks within the ND reaction coordinate denoted by <i>Q</i> which is fraction of native shortcuts.</p>
+<ol>
+<li><a href="TSE_location_NDenergy_Gaussians.html" target="_blank">with ND energy (<i>E</i>) Gaussians</a></li>
+<li><a href="TSE_location_NDnets.html" target="_blank">with SCN0 Contact-Order and with SCN0 network clustering</a></li></ol>
+The above three features highlight different aspects of a contact: (i) <i>E</i> is particular about amino acid pairing by native and non-native shortcuts, (ii) Contact-Order is sensitive to sequence distance of native shortcuts, and (iii) <i>C</i> considers the arrangement of native shortcuts relative to each other.
+
+<p><a href="Adjusting_ND_energies.html" target="_blank">Adjusting ND energies</a></p>
+</section><hr style="color:lightgrey;">
+
+<section>
+<h2>Microscopic investigations</h2>
+<img class="responsive-img" src="Figures/NSlocent_phi.jpg" alt="phi from NS local centrality" style="width:600px; height:200px;" >
+<img class="responsive-img" src="Figures/NDcent_phi.jpg" alt="phi from ND centrality" style="width:600px; height:200px;" >
+
+<figcaption>Top: Calculating phi-values with local node centrality from native-state PRNs.
+<br>Bottom: Calculating phi-values with node centrality from ND generated PRNs.</figcaption>
+
+<p><a href="Calculated_phi-values_from_NS_and_TSE_PRNs.html" target="_blank">Calculating phi-values from native-state and transition-state PRNs</a></p>
+
+<p><a href="Calculated_phi-values_from_ND_nets.html" target="_blank">Calculating phi-values from ND PRNs</a>: edv=a, ndv=craxy</p>
+
+<p><a href="Calculated_phi-values_from_ND_nets_with_NS_norm.html" target="_blank">Calculating phi-values from ND PRNs with NS normalization</a></p>
+
+<!-- <p><a href="Calculated_phi-values_from_NDnets.html" target="_blank">Calculating phi-values from ND PRNs: edv=abslv, ndv=craxy</a></p> -->
+
+</section><hr style="color:darkgrey;">
+
+<p></p>
+</main>
+<footer>Copyright 2019-2021 Susan Khor 許</footer>
+</body>
+</html>
+
