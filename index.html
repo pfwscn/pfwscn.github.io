@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="utf-8">
 <title>Protein Folding with Shortcut Networks</title>
 <style>
 a:link {	
@@ -28,9 +29,7 @@ a:focus {
 <img class="responsive-img" src="Figures/2ci2.jpg" alt="2ci2 cartoon" style="width:250px; height:200px;" >
 <img class="responsive-img" src="Figures/2ci2_cm.jpg" alt="2ci2 PRN0 with SCN0 contact map" style="width:198px; height:180px;" >
 <figcaption>Cartoon of 2CI2, and the contact map of its native-state protein residue network with shortcuts denoted in red.</figcaption>
-
 </figure>
-
 
 <section>
 <strong>References</strong>
@@ -46,7 +45,45 @@ If you find any of the material presented here helpful, please cite the revelant
 consider being a <a href=https://ko-fi.com/pfwscn target="_blank">sponsor</a> to advance this research project. Thanks for visiting! &#127803;
 
 <hr style="color:lightgrey;">
+<h1>Mixed ND models and combining ND models by chain fold type</h1>
+Mixed ND models adopt the simplest global node policy (uniform at random), with context-sensitive edge formation policies. E.g. different levels of unscaling may be applied to select edges by SStype or to edges incident on nodes within a certain SSneighborhood.
+<section>
 
+<p><a href="ND_results_by_SStype.html" target="_blank">ND results by SStype: edv=a</a> probes previous macroscopic results (peak E corr. with exp. fold rate) by secondary structure type (A, AB, B). </p>
+<ul>
+<li> Observes that fold rate corr. by SStype depends on ND variant.</li>
+<li> Finds mixing simulated fold rates (peak Es) from different ND variants and exploiting previous result on scaling of edge probability, can strengthen overall fold rate corr. and fold rate corr. by SStype. </li>
+</ul>
+
+<p>Preliminary results:</p>
+<ul>
+<li>For the UZ dataset (52 two-state folders), overall fold rate corr. strengthens from -0.72 (previously reported best with the 'a' ND variant) to -0.77 with mixed ND model.  Notably, the fold rate correlations by chain fold type are now all significant (p-value < 0.005), when previously they were significant for AB and B chain fold types only (p-value < 0.02). </li>
+<li>For the K dataset (20 non-two-state folders), overall fold rate corr. strengthens from -0.56 (previously reported best with the 'a' ND variant) to -0.65 with mixed ND model.  Further, the K fold rate correlation is now stronger than that which can be obtained relatively cost-free with chain length N^{1/2} (-0.57).</li>
+</ul>
+
+<figure>
+<img class="responsive-img" src="Figures/UZcorrs_by_SStype.png" alt="UZcorrs by SStype" 
+style="width:350px; height:240px;" >
+<img class="responsive-img" src="Figures/UZ_NDmixed_models.png" alt="UZ NDmixed models" 
+style="width:500px; height:240px;" >
+<figcaption>Left: Fold rate correlations by SStype and ND variant for Uzunoglo dataset. 
+Right: Combines peak Es from ND variants: m4-a-m4</figcaption>
+</figure>
+
+<figure>
+<img class="responsive-img" src="Figures/Kcorrs_by_SStype.png" alt="Kcorrs by SStype" 
+style="width:350px; height:240px;" >
+<img class="responsive-img" src="Figures/K_NDmixed_models.png" alt="K NDmixed models" 
+style="width:500px; height:240px;" >
+<figcaption>Left: Fold rate correlations by SStype and ND variant for Kamagata dataset. 
+Right: Combines peak Es from ND variants: t1-a-t3</figcaption>
+</figure>
+
+</section>
+
+<hr style="color:lightgrey;">
+<h1>Pure ND models</h1> 
+Pure ND models (craxy, and unscaled versions of acx: ua, uc and ux) implement global node selection and edge formation policies.
 <section>
 <h2>Mesoscopic investigations</h2>
 <img class="responsive-img" src="Figures/2ci2_SCN0_pathway.png" alt="2ci2 SCN0 folding pathway" style="width:350px; height:300px;" >
@@ -70,7 +107,7 @@ and their folding pathways from native shortcut networks.</p>
 
 <p><a href="Fold_rate_corrs_v2.html" target="_blank"> Linear correlation with experimental folding rate: edv=a, ndv=craxy</a></p>
 <ol>
-<li>Simulated folding rate (peak ND energies).</li>
+<li>Simulated folding rate (peak ND energy): strongest corr. is with 'a' (-0.73).</li>
 <li>Contact-Order of native shortcut networks (SCN0).</li>
 <li>Network clustering (<i>C</i>) of SCN0.</li>
 </ol>
@@ -81,7 +118,6 @@ and their folding pathways from native shortcut networks.</p>
 </ul>
 
 <p><a href="Model_NDenergy_Gaussians_Paci.html" target="_blank">Model ND energy distributions: edv=a, ndv=craxy</a></p>
-
 <p>Locating TSE networks within the ND reaction coordinate denoted by <i>Q</i> which is fraction of native shortcuts.</p>
 <ol>
 <li><a href="TSE_location_NDenergy_Gaussians.html" target="_blank">with ND energy (<i>E</i>) Gaussians</a></li>
@@ -89,6 +125,7 @@ and their folding pathways from native shortcut networks.</p>
 The above three features highlight different aspects of a contact: (i) <i>E</i> is particular about amino acid pairing by native and non-native shortcuts, (ii) Contact-Order is sensitive to sequence distance of native shortcuts, and (iii) <i>C</i> considers the arrangement of native shortcuts relative to each other.
 
 <p><a href="Adjusting_ND_energies.html" target="_blank">Adjusting ND energies</a></p>
+
 </section><hr style="color:lightgrey;">
 
 <section>
@@ -105,13 +142,12 @@ The above three features highlight different aspects of a contact: (i) <i>E</i> 
 
 <p><a href="Calculated_phi-values_from_ND_nets_with_NS_norm.html" target="_blank">Calculating phi-values from ND PRNs with NS normalization</a></p>
 
-<!-- <p><a href="Calculated_phi-values_from_NDnets.html" target="_blank">Calculating phi-values from ND PRNs: edv=abslv, ndv=craxy</a></p> -->
+<p><a href="Edge_q-labelling_part_2A.html" target="_blank">Edge q-labelling</a> reports how ordering PRN0 edges by their avg-q values (otained from ND snaps) can identify TSE PRN0 edges with average AUC = 0.80 over the three biased ND variants a, c, and x. </p>
 
 </section><hr style="color:darkgrey;">
 
 <p></p>
 </main>
-<footer>Copyright 2019-2021 Susan Khor</footer>
+<footer>Copyright 2019-2021 Susan Khor 許</footer>
 </body>
 </html>
-
